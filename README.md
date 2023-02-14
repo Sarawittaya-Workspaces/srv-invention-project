@@ -10,7 +10,6 @@ Subject: Invention Project [Sarawittaya]
 
 ## ส่วนประกอบ
 1. อะลูมิเนียม
-
 2. น็อต
 3. Rivet (ตัวยึดอลูมิเนียม)
 4. มอเตอร์ Lyx lx800 (DC Motor)
