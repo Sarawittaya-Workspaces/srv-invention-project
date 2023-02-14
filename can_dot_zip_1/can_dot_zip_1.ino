@@ -1,6 +1,7 @@
 #define RPWM 9
 #define LPWM 10
 #define PWM 11
+#define BTN 7
 
 void motor_cw(){
     digitalWrite(LPWM, LOW);
@@ -27,11 +28,17 @@ void setup(){
     pinMode (RPWM, OUTPUT);
     pinMode (PWM, OUTPUT);
     pinMode (LPWM, OUTPUT);
+    pinMode (BTN, INPUT);
 }
 
 void loop(){
-    motor_stop(); delay(750);
-    motor_cw();   delay(12000); //ออก
-    motor_stop(); delay(750);
-    motor_ccw();  delay(12000); //เข้า
+    if(digitalRead(BTN) == HIGH){
+        motor_cw();   delay(12000); //ออก
+        motor_stop(); delay(750);
+        motor_ccw();  delay(12000); //เข้า
+        motor_stop(); delay(750);
+    }
+    else{
+        motor_ccw();
+    }
 }
