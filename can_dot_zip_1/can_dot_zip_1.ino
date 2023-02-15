@@ -35,10 +35,9 @@ void loop(){
     if(digitalRead(BTN) == HIGH){
         motor_cw();   delay(12000); //ออก
         motor_stop(); delay(750);
-        motor_ccw();  delay(12000); //เข้า
-        motor_stop(); delay(750);
     }
-    else{
+    if(digitalRead(BTN) == LOW){
         motor_ccw();
+        delay(750);
     }
 }
